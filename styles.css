@@ -94,9 +94,7 @@ p { margin: 0; }
   color: var(--pink-script);
   line-height: .78;
   /* cream "sticker" outline behind the letters */
-  -webkit-text-stroke: 7px #f7f2e8;
-  paint-order: stroke fill;
-  text-shadow: .6px 0 0 var(--pink-script), -.6px 0 0 var(--pink-script), 0 .6px 0 var(--pink-script);
+  text-shadow: .5px 0 0 var(--pink-script), -.5px 0 0 var(--pink-script), 3px 0px 0 #f7f2e8, -3px 0px 0 #f7f2e8, 0px 3px 0 #f7f2e8, 0px -3px 0 #f7f2e8, 2px 2px 0 #f7f2e8, -2px 2px 0 #f7f2e8, 2px -2px 0 #f7f2e8, -2px -2px 0 #f7f2e8, 4px 1px 0 #f7f2e8, -4px 1px 0 #f7f2e8, 1px 4px 0 #f7f2e8, -1px -4px 0 #f7f2e8;
   filter: drop-shadow(0 2px 3px rgba(80, 40, 40, .18));
 }
 
@@ -431,7 +429,7 @@ p { margin: 0; }
   text-align: left;
   transform: rotate(-14deg);
   margin: clamp(24px, 2.6vw, 36px) 0 0 18%;
-  -webkit-text-stroke: 0;
+  text-shadow: none;
   filter: none;
 }
 
@@ -570,3 +568,79 @@ p { margin: 0; }
 .legal-body li::marker { color: var(--pink); }
 .legal-body a { color: var(--pink); overflow-wrap: anywhere; }
 .footer-links a[aria-current="page"] { text-decoration: underline; }
+
+/* ======================= PHONES ======================= */
+@media (max-width: 600px) {
+  /* header: menu + instagram on one row */
+  .topbar { font-size: 13px; padding-top: 10px; }
+  .logo-main { font-size: 44px; margin-top: 12px; }
+  .nav { flex-direction: row; flex-wrap: wrap; justify-content: center; margin-top: 12px; }
+  .nav-toggle { margin: 0; }
+  .nav-ig { position: static; transform: none; width: 34px; height: 34px; margin-left: 16px; }
+  .nav ul { width: 100%; }
+
+  /* hero */
+  .hero-main { order: 1; } .hero-mid { order: 2; } .hero-photo { order: 3; } .hero-side { order: 4; }
+  .hero { padding-top: 22px; }
+  .hero h1 { font-size: 46px; line-height: 1.08; }
+  .hero-sub { font-size: 17px; }
+  .hero-main .btn { display: block; text-align: center; }
+  .hero-mid { display: flex; align-items: center; gap: 14px; margin-top: 8px; }
+  .lips { position: static; float: none; width: 96px; flex-shrink: 0; margin: 0; }
+  .hero-mid p { padding-top: 0; font-size: 16px; }
+  .hero-photo { margin: 34px auto 0; width: 82%; }
+  .pushpin { width: 64px; top: -30px; right: -10px; }
+  .hero-side { padding-top: 22px; padding-bottom: 22px; margin: 0; }
+  .hero-side p { font-size: 16px; }
+
+  /* thrill: skip the second storefront photo (same photo as the hero) */
+  .thrill-photo { display: none; }
+  .thrill h2 { font-size: 44px; }
+  .thrill-content { padding-top: 28px; }
+  .thrill blockquote { font-size: 26px; padding-left: 64px; }
+  .exclaim { width: 54px; bottom: 44px; }
+
+  /* merch: collage between text and button */
+  .merch-inner { display: flex; flex-direction: column; align-items: stretch; text-align: left; padding-top: 26px; padding-bottom: 22px; }
+  .merch-copy { display: contents; }
+  .merch h2 { font-size: 40px; order: 1; }
+  .merch-copy p { order: 2; font-size: 16px; margin-bottom: 8px; }
+  .merch-collage { order: 3; width: 100%; aspect-ratio: 920 / 560; }
+  .merch-copy .btn { order: 4; display: block; text-align: center; margin-top: 10px; min-width: 0; }
+  .m-label { font-size: 8.5px; bottom: 0; }
+
+  /* sell */
+  .sell h2 { font-size: 46px; }
+  .caps-sub { font-size: 12px; letter-spacing: .1em; }
+  .steps .num { font-size: 50px; }
+  .steps h3 { font-size: 23px; }
+  .steps p { font-size: 15px; }
+  .steps p br { display: none; }
+  .cash { font-size: 24px; }
+  .btn-wide { display: block; }
+  .app-link { font-size: 19px; }
+
+  /* gift */
+  .gift h2 { font-size: 36px; }
+  .gift-copy p { font-size: 16px; }
+  .gift-inner { padding-bottom: 100px; }
+  .xoxo { font-size: 54px; right: 50%; transform: translateX(50%) rotate(-8deg); white-space: nowrap; }
+
+  /* faq */
+  .faq h2 { font-size: 36px; }
+  .faq summary { font-size: 15.5px; }
+  .faq details p { font-size: 15.5px; padding: 0 1em 1em; }
+
+  /* contact */
+  .phone { width: 62%; }
+  .contact h2 { font-size: 40px; }
+  .contact-sub { font-size: 16px; }
+  .contact-sub br { display: none; }
+  .contact-form input, .contact-form textarea { font-size: 16px; } /* 16px stops iPhone from zooming in on tap */
+  .contact-form .btn { display: block; width: 100%; min-width: 0; }
+  .good-style { font-size: 54px; }
+
+  /* footer */
+  .footer-links { gap: 14px; font-size: 15px; }
+  .btn-newsletter { font-size: 13px; width: 100%; }
+}
