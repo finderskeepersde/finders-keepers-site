@@ -416,6 +416,7 @@ p { margin: 0; }
   color: var(--ink);
   border-radius: 0;
 }
+.contact-form #phone { grid-column: 1 / -1; }
 .contact-form textarea { grid-column: 1 / -1; min-height: clamp(90px, 9.3vw, 130px); resize: vertical; }
 .contact-form input:focus, .contact-form textarea:focus { outline: 2px solid var(--pink); outline-offset: -1px; }
 .contact-form .btn { grid-column: 1 / -1; justify-self: start; margin-top: 10px; font-size: clamp(16px, 1.75vw, 24.5px); padding: .52em 1.1em .5em; min-width: clamp(200px, 20.7vw, 290px); }
